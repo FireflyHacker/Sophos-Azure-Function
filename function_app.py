@@ -7,9 +7,9 @@ import re
 # TODO: Use Secrets for these values so they are not stored in the source code
 SOPHOS_TOKEN_URL = "https://id.sophos.com/api/v2/oauth2/token"
 SOPHOS_API_BASE = "https://api-us01.central.sophos.com"
-SOPHOS_CLIENT_ID = "c58aaf5c-ea35-41fe-9ca0-44d843db8a12"
-SOPHOS_CLIENT_SECRET = "9c12a46832634296ba7dd5e1434556925fa428ce90a68aa71a0691bb6e9f483e0efa618867927d8482f7d805980dbd44ee51"
-SOPHOS_TENANT_ID = "85679df5-938f-4119-8bda-47781fcf6a66"
+SOPHOS_CLIENT_ID = ""
+SOPHOS_CLIENT_SECRET = ""
+SOPHOS_TENANT_ID = ""
 
 gateway_down_pattern = r"Gateway\s+(.*?)\s+is down\."
 gateway_up_pattern = r"Gateway\s+(.*?)\s+is up\."
