@@ -6,13 +6,15 @@ import re
 
 # TODO: Use Secrets for these values so they are not stored in the source code
 SOPHOS_TOKEN_URL = "https://id.sophos.com/api/v2/oauth2/token"
-SOPHOS_API_BASE = "https://api-us01.central.sophos.com"
+SOPHOS_API_BASE = ""
 SOPHOS_CLIENT_ID = ""
 SOPHOS_CLIENT_SECRET = ""
 SOPHOS_TENANT_ID = ""
 
 gateway_down_pattern = r"Gateway\s+(.*?)\s+is down\."
 gateway_up_pattern = r"Gateway\s+(.*?)\s+is up\."
+
+logging.info('Starting Function')
 
 app = func.FunctionApp()
 
@@ -62,7 +64,8 @@ def get_sophos_token():
     data = {
         "grant_type": "client_credentials",
         "client_id": SOPHOS_CLIENT_ID,
-        "client_secret": SOPHOS_CLIENT_SECRET
+        "client_secret": SOPHOS_CLIENT_SECRET,
+        "scope": "token"
     }
     headers = {
         "Content-Type": "application/x-www-form-urlencoded"
